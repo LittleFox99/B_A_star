@@ -1,4 +1,10 @@
-
+#-*- coding:utf-8 -*-
+# @Time    : 2020/11/11 1:21 下午
+# @Author  : LittleFox99
+# File : a_star.py
+# 参考博客：
+# https://blog.csdn.net/lustyoung/article/details/105027607
+# https://www.jianshu.com/p/5704e67f40aa
 import numpy as np
 import queue
 from queue import PriorityQueue
@@ -374,7 +380,6 @@ def draw_path(max_row, max_col, barrier_map, path=None, openlist=None, stop_poin
     plt.scatter(stop_point.getx(), stop_point.gety(), s=500, c='g', marker='s')
     plt.scatter(start.getx(),start.gety(),s=500, c='b', marker='s')
     plt.scatter(end.getx(), end.gety(), s=500, c='b', marker='s')
-    # plt.plot(path_x, path_y, linewidth=3)
     plt.title("Bidirectiional A Star , a = {}, b = {}".format(a, b))
     print(path)
     plt.savefig("result_pic/a_{},b_{}.png".format(a, b))
@@ -386,8 +391,7 @@ def draw_arg(travel_num, path_num, a_list, b_list):
 
     travel_num = np.array(travel_num)
     path_num = np.array(path_num)
-    fig,ax = plt.subplots(2, 1,figsize=(15,12))
-    # fig.legend(b_list, frameon=False)
+    fig,ax = plt.subplots(2, 1, figsize=(15,12))
     for i in range(0, 6):
         ax[0].plot(a_list, travel_num[i*6:(i+1)*6], markes[i],label=b_list[i])
         ax[0].set_ylabel('Travel num')
@@ -397,7 +401,7 @@ def draw_arg(travel_num, path_num, a_list, b_list):
     ax[0].set_title('the two args of B-A*')
     box = ax[1].get_position()
     ax[1].set_position([box.x0, box.y0, box.width, box.height])
-    ax[1].legend(loc='right', bbox_to_anchor=(1.1, 0.6), ncol=1,title="b")
+    ax[1].legend(loc='right', bbox_to_anchor=(1.1, 0.6), ncol=1, title="b")
     plt.savefig("ab.png")
     plt.show()
 
