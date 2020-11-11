@@ -2,7 +2,7 @@
 # @Time    : 2020/11/11 1:21 下午
 # @Author  : LittleFox99
 # File : a_star.py
-# 参考博客：
+# 参考：
 # https://blog.csdn.net/lustyoung/article/details/105027607
 # https://www.jianshu.com/p/5704e67f40aa
 import numpy as np
